@@ -3,5 +3,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/coolblocks/", // matches your repo name exactly
+  base: "/coolblocks/", // EXACTLY your repo name
 });
