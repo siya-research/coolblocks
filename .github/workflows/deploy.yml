@@ -20,19 +20,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Node setup (no caching that needs a lockfile)
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # Install deps WITHOUT requiring a lockfile
-      - run: npm install
+      # DEBUG: shows what's actually in your repo root
+      - name: Show files
+        run: |
+          pwd
+          ls -la
+          node -v
+          npm -v
+          echo "----- package.json -----"
+          cat package.json || true
 
-      # Build your Vite app
-      - run: npm run build
+      - name: Install deps
+        run: npm install
 
-      # Upload the generated "dist" folder to Pages
-      - uses: actions/upload-pages-artifact@v3
+      - name: Build
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
