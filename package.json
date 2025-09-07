@@ -1,13 +1,8 @@
 {
   "name": "coolblocks",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
+  "scripts": { "dev": "vite", "build": "vite build", "preview": "vite preview" },
   "dependencies": {
     "@turf/turf": "^6.5.0",
     "leaflet": "^1.9.4",
